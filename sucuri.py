@@ -97,6 +97,9 @@ def main():
 ###################################################
 # Prompt user for input, then call original main()
 ###################################################
+
 if __name__ == "__main__":
-    prompt_for_input()
+    # Only prompt the user if they haven't passed --no-prompt
+    if "--no-prompt" not in sys.argv:
+        prompt_for_input()
     main()

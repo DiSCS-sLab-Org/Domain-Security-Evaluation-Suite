@@ -9,6 +9,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib import colors
 from zapv2 import ZAPv2
+import sys
 
 def prompt_for_input():
     """
@@ -248,5 +249,6 @@ def main():
 # Run the new prompt first, then run the original main
 # ----------------------------------------------------
 if __name__ == "__main__":
-    prompt_for_input()
+    if "--no-prompt" not in sys.argv:
+        prompt_for_input()
     main()

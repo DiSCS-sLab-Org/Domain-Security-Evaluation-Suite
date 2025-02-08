@@ -116,23 +116,21 @@ def merge_reports_for_domain(domain_line, tools_ran, first_page_image="first_pag
 
 
 def run_tool(tool_name):
-    """
-    Calls the corresponding script using sys.executable (same Python interpreter).
-    """
     current_dir = os.path.dirname(os.path.abspath(__file__))
     python_exe = sys.executable  # Points to the current Python interpreter
 
     if tool_name == "shodan":
         print("[INFO] Running Shodan script...")
-        subprocess.call([python_exe, os.path.join(current_dir, "shodan.py")])
+        subprocess.call([python_exe, os.path.join(current_dir, "shodan.py"), "--no-prompt"])
     elif tool_name == "sucuri":
         print("[INFO] Running Sucuri script...")
-        subprocess.call([python_exe, os.path.join(current_dir, "sucuri.py")])
+        subprocess.call([python_exe, os.path.join(current_dir, "sucuri.py"), "--no-prompt"])
     elif tool_name == "zap":
         print("[INFO] Running ZAP script...")
-        subprocess.call([python_exe, os.path.join(current_dir, "zap.py")])
+        subprocess.call([python_exe, os.path.join(current_dir, "zap.py"), "--no-prompt"])
     else:
         print(f"[WARNING] Unknown tool requested: {tool_name}")
+
 
 def main():
     print("Select domain input method:")
