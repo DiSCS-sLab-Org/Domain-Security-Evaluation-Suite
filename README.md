@@ -84,5 +84,5 @@ Each script can run **individually** for its respective tool or be orchestrated 
 
 1. **Clone** this repository:
    ```bash
-   git clone https://github.com/DiSCS-sLab/Domain-Security-Evaluation-Suite.git
+   git clone https://github.com/DiSCS-sLab-Org/Domain-Security-Evaluation-Suite.git
    cd Domain-Security-Evaluation-Suite
